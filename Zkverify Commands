@@ -1,0 +1,41 @@
+1. git clone https://github.com/0xmetaschool/zkverify-proofverification.git
+
+cd zkverify-proofverification
+
+
+2.   npm install -g snarkjs@latest
+
+
+3.   curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+
+
+. "$HOME/.cargo/env"
+
+
+4.  git clone https://github.com/iden3/circom.git
+
+
+5.   cd circom
+
+cargo install --path circom
+
+cd ..
+
+
+6. sudo chmod +x circuit_setup.sh
+
+./circuit_setup.sh
+
+
+7.  git clone https://github.com/HorizenLabs/snarkjs2zkv.git
+
+cd snarkjs2zkv
+
+npm install
+
+
+8.  node snarkjs2zkv convert-proof /workspaces/Ntekearning/zkverify-proofverification/proof.json -o proof_zkv.json
+
+9.  node snarkjs2zkv convert-vk /workspaces/Ntekearning/zkverify-proofverification/verification_key.json -o verification_key_zkv.json
+
+10.   node snarkjs2zkv convert-public /workspaces/Ntekearning/zkverify-proofverification/public.json -o public_zkv.json -c bn128
